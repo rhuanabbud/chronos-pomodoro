@@ -1,18 +1,52 @@
-import { Heading } from './components/Heading';
+import { Container } from './components/Container';
+import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
 
 import './styles/theme.css';
 import './styles/global.css';
+import { CountDown } from './components/CountDown';
+import { DefaultInput } from './components/DefaultInput';
+import { Cycles } from './components/Cycles';
 
 export function App() {
   return (
     <>
-      <Heading />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime adipisci
-        libero, itaque, molestias impedit tenetur cumque necessitatibus vitae
-        corporis nemo officia! Labore, unde sapiente optio mollitia enim quia.
-        Animi, nisi.
-      </p>
+      <Container>
+        <Logo />
+      </Container>
+
+      <Container>
+        <Menu />
+      </Container>
+
+      <Container>
+        <CountDown />
+      </Container>
+
+      <Container>
+        <form className='form' action=''>
+          <div className='formRow'>
+            <DefaultInput
+              labelText='Task'
+              id='meuInput'
+              type='text'
+              placeholder='Digite sua tarefa aqui'
+            />
+          </div>
+
+          <div className='formRow'>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className='formRow'>
+            <Cycles />
+          </div>
+
+          <div className='formRow'>
+            <button>Enviar</button>
+          </div>
+        </form>
+      </Container>
     </>
   );
 }
